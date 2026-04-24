@@ -1,0 +1,69 @@
+Task 1
+Check the identity of the currently logged-in user and display the username of the current session.
+
+ whoami
+
+Task 2
+Check which users are currently logged into the system and what they are doing.
+
+w
+
+Task 3
+View the login history of the system.
+
+last
+
+Task 4
+Display complete system information, the hostname, and how long the system has been running.
+
+hostnamectl
+uptime
+
+Task 5
+Create two groups: developers and qa. Verify both groups were successfully created and display the complete list of groups on the system.
+------Group creation-------
+sudo groupadd developers
+sudo groupadd qa
+
+--------group verification-----
+getent group developers
+getent group qa
+
+---------all list------
+cat /etc/group
+
+task 6
+Create the following users and assign each to their respective group:
+
+Employee	Department
+aman	        developers
+ritu	        developers
+karan    	qa
+ 
+sudo useradd -m -G developers aman
+sudo useradd -m -G developers ritu
+sudo useradd -m -G qa karan
+
+----------set pass ---------
+sudo passwd aman
+sudo passwd ritu
+sudo passwd karan
+
+--------verify users-------
+id aman
+id ritu
+id karan
+
+task 7
+Employee ritu has resigned. Ensure she has no active sessions, delete her account along with her home directory, and verify she no longer exists on the system.
+
+--------check if active -------
+who | grep ritu
+----------if active terminate-------
+sudo pkill -u ritu
+----------delete user with home directory-------
+sudo userdel -r ritu
+-------verify del-------
+id ritu
+--------check home directory --------
+ls /home
