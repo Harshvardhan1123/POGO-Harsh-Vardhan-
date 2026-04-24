@@ -1,0 +1,44 @@
+Task 1
+Navigate to your home directory and create a file named index.html.
+
+---------TO home dir-----------
+cd ~
+------create index.html---------
+touch index.html
+
+Task 2
+Add any HTML text content to the file.
+
+----------Add code--------
+echo "<html><body><h1>Hello I M Harsh Vardhan</h1></body></html>" > index.html
+
+
+Task 3
+Check the file's current default permissions.
+
+ls -l index.html
+
+Task 4
+Grant full permissions (read, write, execute) to all users on the file.
+
+chmod 777 index.html
+
+Task 5
+Change the file owner and group to www-data.
+
+sudo chown www-data:www-data index.html
+-----verify-----
+ls -l index.html
+
+task 6
+Change the file permissions to 755
+
+chmod 755 index.html
+
+Task 7
+Display the final permissions and ownership to verify the configuration.
+
+ls -l index.html
+
+
+
